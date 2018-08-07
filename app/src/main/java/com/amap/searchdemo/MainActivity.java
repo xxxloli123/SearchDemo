@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity implements LocationSource,
             aMap = mapView.getMap();
             setUpMap();
         }
-//              地图状态发生变化的监听接口
+
         aMap.setOnCameraChangeListener(new AMap.OnCameraChangeListener() {
             @Override
             public void onCameraChange(CameraPosition cameraPosition) {
@@ -197,7 +197,9 @@ public class MainActivity extends AppCompatActivity implements LocationSource,
 
             @Override
             public void onCameraChangeFinish(CameraPosition cameraPosition) {
+                //              动作   &&(和)     搜索
                 if (!isItemClickAction && !isInputKeySearch) {
+                    //值'isInputKeySearch'总是'false'
                     geoAddress();
                     startJumpAnimation();
                 }
